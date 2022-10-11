@@ -5,13 +5,10 @@ class Persona {
     this.anni = anni;
   }
   createListPersone() {
-    let lista = document.createElement("ol");
+    let lista = document.createElement("ul");
     let li = document.createElement("li");
-    lista.appendChild(li);
-
     li.innerHTML += `${this.nome}${this.cognome}${this.anni}`;
-    // li.innerHTML += this.cognome;
-    // li.innerHTML += this.anni;
+    lista.appendChild(li);
 
     let persone = document.querySelector("#persone");
     persone.appendChild(lista);
@@ -19,7 +16,6 @@ class Persona {
 }
 
 function aggiungiPersona() {
-  document.querySelector("#persone").innerHTML = "";
   let persone = new Persona(document.querySelector("#nome").value, document.querySelector("#cognome").value, document.querySelector("#anni").value);
 
   persone.createListPersone();
