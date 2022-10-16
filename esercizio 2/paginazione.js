@@ -17,6 +17,7 @@ let persone = [
   new Persone("nicole", "verdi"),
   new Persone("gianluca", "bianchi"),
   new Persone("mario", "gatti"),
+  new Persone("mario", "gatti"),
 ];
 
 console.log(persone);
@@ -27,6 +28,14 @@ class Pagina {
     this.pageSize = pageSize;
   }
   render(tagHtml) {
+    // mostrare gli elementi
+    /*
+numero della pagina : numero indice da a elementi 
+    pagina 0 : 0 - 10 = (0 * 10) => (10 * 0 + 9) // 10 esculo
+    pagina 0
+    pagina 0
+    pagina 0
+    */
     for (let persona of this.items) {
       let li = document.createElement("li");
       li.innerHTML += persona.name + " " + persona.surname;
@@ -39,8 +48,3 @@ console.log(pagina1);
 
 let ul = document.querySelector("ul");
 pagina1.render(ul);
-
-// la classe pagina mi riempie un array con un limite di 10 elementi
-// il metodo render prende come parametro un elemento html, per ogni elemento dell'array,
-// crea un li con dentro i valori di nome e cognome del singolo elemento dell'array
-// alla fine appendo li al contenitore dell'html
